@@ -1,0 +1,101 @@
+function part(part_name, part_description, sub_parts) {
+	this.part_name = part_name;
+	this.part_description = part_description;
+	this.sub_parts = sub_parts
+}
+
+function sub_part(sub_part_name, sub_part_texts) {
+	this.sub_part_name = sub_part_name;
+	this.sub_part_texts = sub_part_texts;
+}
+
+	
+var parts = [
+	new part(
+		"Présentation",
+		"AltaProfits.com, un site visionnaire",
+		[
+		new sub_part("L'entreprise", []),
+		
+		new sub_part("Les employés", []),
+		
+		new sub_part("Les locaux", [])
+		]
+	),
+	
+	new part(
+		"Mon stage",
+		"Deux semaines riches en apprentissage",
+		[
+		new sub_part("Accueil", []),
+		
+		new sub_part("Première semaine", []),
+		
+		new sub_part("Deuxième semaine", [])
+		]	
+	),
+	
+	new part(
+		"Conclusion",
+		"Un stage proche de la perfection",
+		[
+		new sub_part("Ce que j'ai appris", []),
+		
+		new sub_part("Points positifs", []),
+		
+		new sub_part("Points négatifs", [])
+		]	
+	)
+	];
+
+function getParts(){
+return parts;
+}
+
+
+$(document).ready(function(){
+
+	var inCode_part_titles = $("#part_titles");
+	var inCode_part_descriptions = $("#part_descriptions");
+	var inCode_sub_part_titles = $("#sub_part_titles");
+	var inCode_parts = $("#parts");
+	
+				var TemporaryNumber = 0;
+	for(var i = 0; i < parts.length; i++) {
+		//récupération des textes
+		for(var k = 0; k < parts[i].sub_parts.length; k++) {
+			var textPath = "media/texts/" + parts[i].part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e") + "/" + parts[i].sub_parts[k].sub_part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e") + ".html";
+			var toInsert = "<iframe id='Temporary_iframe" + TemporaryNumber + "' name='Temporary_iframe" + TemporaryNumber + "' src='" + textPath + "'></iframe>";
+			$(toInsert).appendTo($("body"));
+			
+			$("#Temporary_iframe" + TemporaryNumber).ready((function(parts, i, k, jqueryobject) {
+						return function(){
+							var currentContent = jqueryobject.contents().text();
+							var part_name = parts[i].part_name.replace(/[\s\']/g, '_').toLowerCase().replace(/[éè]/g, "e");
+							var sub_part_name = parts[i].sub_parts[k].sub_part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e");
+							var toAdd_texts = "<div class='part "+ part_name  + " " + sub_part_name + "'>" + currentContent + "</div>";
+				   		$(toAdd_texts).appendTo($("#parts"));	
+				   	
+							//jqueryobject.remove();
+						}
+			})(parts, i, k, $("#Temporary_iframe" + TemporaryNumber)));
+				TemporaryNumber++;
+		}
+	
+		//ajout des données au HTML final
+		var toAdd_part_title = "<span class='part_title'>" + parts[i].part_name + "</span>";
+		$(toAdd_part_title).appendTo(inCode_part_titles);
+		var toAdd_part_description = "<span class='part_description " + parts[i].part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e") + "'>" + parts[i].part_description + "</span>";
+		$(toAdd_part_description).appendTo(inCode_part_descriptions);
+		for(var l = 0; l < parts[i].sub_parts.length; l++) {
+			var toAdd_sub_part_titles = "<span class='sub_part_title " + parts[i].part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e") + "'>" + parts[i].sub_parts[l].sub_part_name + "</span>";
+			$(toAdd_sub_part_titles).appendTo(inCode_sub_part_titles);
+		}
+		/*for(var m = 0; m < parts[i].sub_parts.length; m++) {
+			for(var n = 0; n < parts[i].sub_parts[m].sub_part_texts.length; n++) {
+				var toAdd_texts = "<div class='part "+ parts[i].part_name.replace(/[\s\']/g, '_').toLowerCase().replace(/[éè]/g, "e") + " " + parts[i].sub_parts[m].sub_part_name.toLowerCase().replace(/[\s\']/g, '_').replace(/[éè]/g, "e") + "'>" + parts[i].sub_parts[m].sub_part_texts[n] + "</div>";
+				$(toAdd_texts).appendTo(inCode_parts);
+			}		
+		}*/
+	}
+}); 

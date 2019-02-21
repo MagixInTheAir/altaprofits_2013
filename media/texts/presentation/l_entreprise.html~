@@ -1,0 +1,38 @@
+<p>
+Mon stage s'est déroulé dans une entreprise parisienne nommée "Altaprofits". C'est une entreprise de [courtage d'assurances vie].
+				</p>
+				
+				<p>
+Altaprofits se situe sur la rue de la Paix, dans le [8e] arrondissement de Paris. 
+--L'entreprise-- comporte 15 employés, répartis principalement dans deux domaines: la gestion informatique et le support du client.
+				</p>
+				<p>
+Le site de l'entreprise, <a href="http://www.altaprofits.com/">www.altaprofits.com</a>, 
+est la principale interface de contact entre le client et le courtier. 
+En effet, Altaprofits est l'inventeur de l'assurance-vie en ligne, ayant passé la barre des 25 000 contrats l'année dernière.
+				</p>
+				<div class='img-container'>
+					<div class="hint--left hint--always floatright" data-hint="La page principale du site www.altaprofits.com">
+						<img src='../../images/content/screenshot_site.png'>
+					</div>
+				</div>
+				<div class='img-container' style="margin-top: 30px; margin-bottom: 50px;">
+					<div class='hint--right hint--always floatleft' data-hint="Les fondateurs d'Altaprofits">
+						<img src='../../images/content/Fondateurs_big.jpg'/>
+					</div>
+				</div>
+				<p>
+François Leneveu, Elisabeth Andrey et Hervé Tisserand, professionnels de la gestion de capitaux, 
+sont les fondateurs d'Altaprofits.<br/><br/>
+				</p>
+				<h3>Historique rapide d'Altaprofits:</h3>                            
+Décembre 1999: Création d’Altaprofits S.A.<br/>
+Novembre 2000: Mise en production du site.<br/>
+Décembre 2000: Souscriptions des premiers contrats Altaprofits Vie (assureur Generali Patrimoine).<br/>
+Juin 2006: Altaprofits S.A. atteint l’équilibre financier.<br/>
+Novembre 2012: Altaprofits.com lance son application mobile iPhone, 100 % confidentielle et sécurisée, 100 % gratuite.<br/>
+				<p class="italic">
+Il est a noter que certains évènements de nature financière en rapport avec Altaprofits, bien qu'importants, ont été supprimés de cette liste pour des raisons de compréhensibilité.
+				</p>
+				</div>
+

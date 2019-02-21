@@ -1,0 +1,5 @@
+function changeHeight(id)
+{
+        var page_height = document.getElementById(id).contentWindow.document.body.scrollHeight;
+	document.getElementById(id).height = page_height+50;
+}

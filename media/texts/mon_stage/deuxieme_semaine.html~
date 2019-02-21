@@ -1,0 +1,46 @@
+<p>
+La première moitié de la deuxième semaine s'est déroulée a l'instar de la première, nous avons finalisé la configuration du serveur Zabbix. 
+En revanche, pendant la seconde moitié de la semaine, j'ai profité du fait d'être avec des développeurs pour m'initier a un nouveau language 
+de programmation: le Javascript.
+				</p>
+				<div class='img-container'>
+					<div class="hint--right hint--always floatleft" data-hint="Example de Javascript, tiré du code de ce rapport de stage." style="margin-top: 30px;">
+						<img src='media/images/content/Javascript.png'/>
+					</div>
+				</div>
+				<span class="question">Mais qu'est-ce que le Javascript?</span>
+				<p>
+Javascript est un langage de programmation, qui permet d'animer des pages Web. Il s'allie parfaitement avec les languages HTML 
+(contenu de page Web), CSS (mise en page de page Web) ou PHP (traitement dynamique des pages Web). 
+Ce rapport de stage lui-même est créé grace aux technologies HTML5, CSS2 et Javascript.
+				</p>
+				<p>
+Cet exemple de Javascript sert a créer les trois boutons que vous voyez a gauche, dans la barre bleue. 
+L'écriture de code Javascript est relativement aisée, rapide a mettre en oeuvre et puissant.</p>
+				<p>
+Grace aux bons conseils de mes collègues d'Altaprofits et d'Internet, j'ai su apprendre en l'espace de quelques jours de 
+quoi faire de belles animations, qui m'ont permi de faire de ce rapport de stage ce qu'il est!
+				</p>
+				<p>
+Petit example de Javascript en action:
+				</p>
+<script type="text/javascript">
+				function RGBdata(R, G, B) {
+				this.R = R;
+				this.G = G;
+				this.B = B;
+				}
+
+				function updateText(color, RGBvalue) {
+					$("#cetexteest").text("Ce texte est " + color + " !");
+					var CSSline = "rgb(" + RGBvalue.R + "," + RGBvalue.G + "," + RGBvalue.B + ")";
+					$("#cetexteest").css("color", CSSline);
+				}
+				</script>
+				<p id="cetexteest"></p>
+				<form>
+		<input name="color" type="radio" CHECKED value="noir" onClick="updateText('noir', new RGBdata(255, 255, 255))">Noir</input>
+		<input name="color" type="radio" value="rouge" onClick="updateText('rouge', new RGBdata(255, 0, 0))">Rouge</input>
+		<input name="color" type="radio" value="vert" onClick="updateText('vert', new RGBdata(0, 255, 0))">Vert</input>
+		<input name="color" type="radio" value="bleu" onClick="updateText('bleu', new RGBdata(0, 0, 255))">Bleu</input>
+				</form>
